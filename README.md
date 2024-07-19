@@ -14,5 +14,3 @@ eg. Python, Ruby, JavaScript
 That's why TypeScript came into picture, which is built on top of JavaScript which checks the type of the variables/objects.
 
 TypeScript is nothing but JavaScript with Type Checking.
-
-![Benifits of TypeScript](C:\Users\HarshalDeshmukh\OneDrive - bizmetric.com\Documents\TypeScript_Practice\Screenshot 2024-07-19 121010.png)
