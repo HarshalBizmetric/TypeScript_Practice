@@ -50,3 +50,62 @@ data = 12345;
 console.log(typeof data);
 
 //--------------------------------------------------
+
+//#Union type
+//Union type can hold variable of different types, just we have to declare it properly.
+//example1:
+let userId: (number | string) = "happy1234";
+userId = 12345;
+
+function displayId(userId: string | number): string | number{
+    console.log(userId);
+    return userId;
+}
+displayId("User Id is: "+ userId);
+
+//example2: 
+
+let myArr: (string | number | boolean)[] = ["Virat", "Delhi", 18, true];
+console.log(myArr);
+
+//--------------------------------
+
+//Type : Void
+// Void - Represents constant value that may be "undefined" or "null"
+function myFun(): void{
+    console.log("This function is of type void as it not returning anything");
+}
+
+//----------------------------------
+
+//Type: never
+//never - Represents value that will never occur. 
+//It is used when function never return value or throws an error or abnormal execution
+
+function myFun2(): never{
+    throw new Error("this is error");
+}
+
+//-----------------------------------------------
+
+//Type - unknown
+//Type safe counterpart of "any"
+//Used when type of value is not known
+//We cannpt apply any property to "unknown" type
+function myFun3(){
+    return "this is myFun3()";
+}
+
+let val: unknown = myFun3();
+//Gives error when used "unknown" as this 'uppercase' property is not known to unknown type
+// console.log(val1.toUperCase());
+
+let val1 : any = myFun3();
+//No error when used "any" as type is ignored
+console.log(val1.toUpperCase());
+
+
+//To change 'unknown' type into 'String' type
+//Here 'val' is of type unknown
+let newStr : string = val as string;
+console.log(typeof newStr);
