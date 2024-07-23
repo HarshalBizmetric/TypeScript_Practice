@@ -207,3 +207,20 @@ order1 = {
     status: "delivered"
 }
 console.log(typeof order1, order1);
+
+
+//----------------------------------------------
+
+// String Literal Type
+// Variable having specific string value
+
+//Example:
+let nameOfUser: 'Rohit' | 'Virat' | 'Dhoni';
+//Error as Type '"Hardik"' is not assignable to type '"Rohit"'
+//nameOfUser = 'Hardik';
+
+nameOfUser = 'Virat';
+//Solution: add more types while declaration
+console.log(typeof nameOfUser);      //String
+
+//-----------------------------------------------------

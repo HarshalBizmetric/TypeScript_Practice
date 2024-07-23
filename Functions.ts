@@ -46,4 +46,75 @@ displayId("User Id is: "+ userId);
 let myArr: (string | number | boolean)[] = ["Virat", "Delhi", 18, true];
 console.log(myArr);
 
-//--------------------------------
+//----------------------------------------------------------
+
+//Type of Functions
+//Full declaration of function
+//(parameters) => return type
+let fun: (x: number, y: number) => number = function myFun(a: number, b: number): number{
+    return a+b;
+};
+
+let person: {
+    firstName: string,
+    lastName: string,
+    getFullName: ()=> string;
+}
+
+person={
+    firstName: "Rohit",
+    lastName: "Sharma",
+    getFullName: function () {
+        return this.firstName+" "+ this.lastName;
+    }
+};
+console.log(person.getFullName());
+
+
+//Optional Parameters --> optional to pass ---> Usually set Last parameter as optional
+//Required Parameters --> Must to pass
+
+function sumOfThree(a: number, b: number, c?: number): number{
+    
+    if(c!== undefined){
+        console.log("Adding three numbers: ", a+b+c);
+        return a+b+c;
+    }
+    console.log("Adding three numbers: ", a+b);
+    return a+b;
+    
+};
+
+console.log(sumOfThree(3,4,5));
+console.log(sumOfThree(4,5));
+
+
+//default parameters
+//here c: number = 10 is th default value
+//If default value is used in between, then use 'undefined' while parsing arguments
+function add(a:number, b: number, c: number = 10): number{
+    let sum = a + b + c;
+    console.log("Sum: ",sum);
+    return sum;
+};
+add(10,20);
+
+
+//Rest Parameters:
+//Must be last parameter
+
+function addition(a: number, b: number, ...rest: number[]): number{
+    let add = a + b;
+    
+    rest.forEach((value) => {
+        add += value;
+    });
+    console.log("Addition is : ", add);
+    return add;
+}
+
+addition(10,20);
+addition(10,20,30,40,50);
+
+
+//--------------------------------------------
