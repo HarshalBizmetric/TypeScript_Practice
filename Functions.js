@@ -76,6 +76,7 @@ function add(a, b, c) {
 ;
 add(10, 20);
 //Rest Parameters:
+//Pass zero or any number of arguments of the specified type to a function
 //Must be last parameter
 function addition(a, b) {
     var rest = [];
