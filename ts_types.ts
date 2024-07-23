@@ -109,3 +109,101 @@ console.log(val1.toUpperCase());
 //Here 'val' is of type unknown
 let newStr : string = val as string;
 console.log(typeof newStr);
+
+//---------------------------------------------
+//  tuple  - data type
+// Number of elements are fixed
+// Types of elements should be known and of same type
+// Order should be same as of declared data types
+
+let skill: [string, number] = ["programming", 400];
+console.log(skill[0]);
+console.log(skill[1]);
+
+//  optional tuple
+//Here 3rd data type is set as optional
+let person: [string, number, string?] = ["virat", 18];
+
+
+//-----------------------------------
+
+//  Enums - group of named constant values
+
+//name of days
+//syntax:
+
+enum days{
+    MON, TUE, WED, THURS, FRI, SAT, SUN
+}
+
+console.log(days);
+
+enum sports{
+    cricket, football, hockey, tennis, badminton
+}
+
+console.log(sports);
+
+//example:
+
+function selectSport(value: sports){
+    switch(value){
+        case sports.badminton:
+            console.log(`You selected badminton`);
+            break;
+        
+        case sports.cricket:
+            console.log(`You selected cricket`);
+            break;
+
+        case sports.tennis:
+            console.log(`You selected tennis`);
+            break;
+
+        default:
+            console.log(`You selected wrong sport`);
+    }
+}
+
+selectSport(sports.cricket);
+selectSport(sports.hockey);
+
+//-----------------------------------------------------
+
+//  Type Alias  - Creating temporary name of type
+
+// set a variable name to desired data type
+//example1:
+type xyz = string
+let country: string = "India";
+//or
+let city: xyz = "Pune";
+console.log(typeof city);   //string
+
+//Exmaple2:
+type alphaNum = (string | number);
+
+let pass: alphaNum
+pass = "MSDhoni07";
+pass = 12345678;
+
+console.log(typeof pass);
+
+
+//Example3:
+
+type order = {
+    name: string,
+    price: number,
+    status: string
+};
+
+//Assigning order as a type to another object
+let order1 : order;
+
+order1 = {
+    name: "Chicken Biryanai",
+    price: 450,
+    status: "delivered"
+}
+console.log(typeof order1, order1);
